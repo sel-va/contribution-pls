@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+  </head>
+  <body>
+    <h3>Hi Welcome..I need ur contribution..</h3>
+    <p>
+      Now my requirement is to create header and footer for mutlipage website
+    </p>
+    <p>
+      ERROR : Continously loading...Not get the value from header.html and
+      footer.html
+    </p>
+    ---------------------------------------
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    ----------------------- Type 1
+    <script>
+      $(function() {
+        var includes = $("[data-include]");
+        $.each(includes, function() {
+          var file = "views/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <div data-include="header"></div>
+    <div data-include="footer"></div>
+    ----------------------------------------------------- Type 2
+    <script>
+      $(function() {
+        $("#includedhead").load("header.html");
+        $("#includedfoot").load("footer.html");
+      });
+    </script>
+
+    <div id="includedhead"></div>
+    <div id="includedfoot"></div>
+  </body>
+</html>
